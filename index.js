@@ -13,6 +13,22 @@ router.post('/add',function(req,res){
   res.json({"error" : false, "message" : "success", "data" : req.body.num1 + req.body.num2});
 });
 
+var personas=[
+{
+    nombre:"Juan",
+    apellido:"G"
+},
+{
+    nombre:"Andres",
+    apellido:"H"
+}
+];
+
+app.get('/personas', (req,res)=>{
+    console.log("personas", personas);
+    res.send(personas);
+});
+
 app.use('/',router);
 
 app.listen(3000,function(){
